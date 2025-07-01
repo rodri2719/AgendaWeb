@@ -1,0 +1,35 @@
+$def with(personas)
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>SQLITE demo</title>
+    </head>
+    <body>
+        <h1>SQLITE3 Personas</h1>
+
+        <form method="POST">
+            <label>Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+            <br>
+            <label>Email</label>
+            <input type="text" name="email" id="email">
+            <br>
+            <input type="submit" value="Agregar">
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                $for fila in personas:
+                    <tr>
+                        <td>$fila[1]</td>
+                        <td>$fila[2]</td>
+                    </tr>
+            </tbody>
+    </body>
+</html>
