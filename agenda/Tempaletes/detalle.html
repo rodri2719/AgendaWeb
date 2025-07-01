@@ -1,0 +1,21 @@
+$def with (respuesta={})
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>SQLITE demo</title>
+    </head>
+    <body>
+        <h1>Detalle Personas</h1>
+        $if respuesta["error"] is not None:
+            <h2>$respuesta["error"]</h2>
+
+        <form>
+            $ nombre = '%s' % respuesta['persona'][1]
+            $ email = '%s' % respuesta['persona'][2]
+            
+            <label>Nombre</label><br>
+            <input type="text" name="nombre" value=$nombre readonly><br>
+            <label>Email</label><br>
+            <input type="text" name="email" value=$email readonly><br>
+    </body>
+</html>

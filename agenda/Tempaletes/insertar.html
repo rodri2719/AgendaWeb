@@ -1,4 +1,3 @@
-$def with(personas)
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -16,20 +15,5 @@ $def with(personas)
             <br>
             <input type="submit" value="Agregar">
         </form>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                $for fila in personas:
-                    <tr>
-                        <td>$fila[1]</td>
-                        <td>$fila[2]</td>
-                    </tr>
-            </tbody>
     </body>
 </html>
