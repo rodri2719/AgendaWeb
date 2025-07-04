@@ -1,0 +1,18 @@
+$def with(respuesta={})
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Detalle Persona</title>
+    </head>
+    <body>
+        <h1>Detalle Persona</h1>
+        $if respuesta["error"] is not None:
+            <h2>$respuesta["error"]</h2>
+        $if respuesta["persona"]:
+            <p><b>Nombre:</b> $respuesta["persona"][1]</p>
+            <p><b>Email:</b> $respuesta["persona"][2]</p>
+        $else:
+            <p>No se encontró la persona.</p>
+        <a href="/">Volver</a>
+    </body>
+</html>

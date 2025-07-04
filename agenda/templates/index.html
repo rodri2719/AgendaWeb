@@ -18,24 +18,16 @@ $def with(respuesta={})
                     <th>Nombre</th>
                     <th>Email</th>
                     <th>Detalle</th>
-                    <th>Editar</th>
-                    <th>Borrar</th>
                 </tr>
             </thead>
             <tbody>
-
                 $for persona in respuesta["personas"]:
-                    $ detalle = '/detalle/%s' % persona[0]
-                    $ editar = '/editar/%s' % persona[0]
-                    $ borrar = '/borrar/%s' % persona[0]
                     <tr>
                         <td>$persona[1]</td>
-
                         <td>$persona[2]</td>
-                        <td><a href=$detalle>Detalle</a></td>
-                        <td><a href=$editar>Editar</a></td>
-                        <td><a href=$borrar>Borrar</a></td>
+                        <td><a href="/detalle/$persona[0]">Ver</a></td>
                     </tr>
             </tbody>
+        </table>
     </body>
 </html>
