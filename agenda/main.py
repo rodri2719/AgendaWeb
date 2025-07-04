@@ -2,6 +2,7 @@
 import web
 # Importa el módulo 'sqlite3', que proporciona una interfaz SQL compatible con DB-API 2.0 para la base de datos SQLite.
 import sqlite3
+import os
 
 # Define una tupla 'urls' que mapea patrones de URL a clases que manejarán esas rutas.
 # Cada par es (patrón_URL, nombre_de_clase).
@@ -251,6 +252,4 @@ application = app.wsgifunc()
 
 # Este bloque se ejecuta solo si el script se ejecuta directamente (no cuando se importa como un módulo).
 if __name__ == "__main__":
-    # Inicia el servidor web de desarrollo de web.py.
-    # Esto hace que la aplicación sea accesible en un navegador (típicamente en http://localhost:8080).
     app.run()
