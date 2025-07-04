@@ -23,15 +23,19 @@ $def with(respuesta={})
                 </tr>
             </thead>
             <tbody>
+
                 $for persona in respuesta["personas"]:
+                    $ detalle = '/detalle/%s' % persona[0]
+                    $ editar = '/editar/%s' % persona[0]
+                    $ borrar = '/borrar/%s' % persona[0]
                     <tr>
                         <td>$persona[1]</td>
+
                         <td>$persona[2]</td>
-                        <td><a href="/detalle/$persona[0]">Ver</a></td>
-                        <td><a href="/editar/$persona[0]">Editar</a></td>
-                        <td><a href="/borrar/$persona[0]" onclick="return confirm('¿Seguro que deseas borrar este registro?');">Borrar</a></td>
+                        <td><a href=$detalle>Detalle</a></td>
+                        <td><a href=$editar>Editar</a></td>
+                        <td><a href=$borrar>Borrar</a></td>
                     </tr>
             </tbody>
-        </table>
     </body>
 </html>

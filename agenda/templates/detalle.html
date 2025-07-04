@@ -1,18 +1,24 @@
-$def with(respuesta={})
+$def with (respuesta={})
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Detalle Persona</title>
+        <title>SQLITE demo</title>
     </head>
     <body>
-        <h1>Detalle Persona</h1>
+        <h1>Detalle Personas</h1>
         $if respuesta["error"] is not None:
             <h2>$respuesta["error"]</h2>
-        $if respuesta["persona"]:
-            <p><b>Nombre:</b> $respuesta["persona"][1]</p>
-            <p><b>Email:</b> $respuesta["persona"][2]</p>
+
+        <form>
+            $ nombre = '%s' % respuesta['persona'][1]
+            $ email = '%s' % respuesta['persona'][2]
+            
+            <label>Nombre</label><br>
+            <input type="text" name="nombre" value=$nombre readonly><br>
+            <label>Email</label><br>
+            <input type="text" name="email" value=$email readonly><br>
+            </form>
         $else:
-            <p>No se encontró la persona.</p>
-        <a href="/">Volver</a>
+            <h2>No se encontró la persona solicitada.</h2>
     </body>
 </html>
