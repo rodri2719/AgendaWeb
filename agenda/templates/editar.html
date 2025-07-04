@@ -1,0 +1,23 @@
+$def with(respuesta={})
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Editar Persona</title>
+    </head>
+    <body>
+        <h1>Editar Persona</h1>
+        $if respuesta["error"] is not None:
+            <h2>$respuesta["error"]</h2>
+        $if respuesta["persona"]:
+            <form method="POST">
+                <label>Nombre</label><br>
+                <input type="text" name="nombre" value="$respuesta['persona'][1]" required><br>
+                <label>Email</label><br>
+                <input type="text" name="email" value="$respuesta['persona'][2]" required><br>
+                <input type="submit" value="Guardar cambios">
+            </form>
+        $else:
+            <p>No se encontró la persona.</p>
+        <a href="/">Volver</a>
+    </body>
+</html>

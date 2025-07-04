@@ -18,6 +18,8 @@ $def with(respuesta={})
                     <th>Nombre</th>
                     <th>Email</th>
                     <th>Detalle</th>
+                    <th>Editar</th>
+                    <th>Borrar</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +28,8 @@ $def with(respuesta={})
                         <td>$persona[1]</td>
                         <td>$persona[2]</td>
                         <td><a href="/detalle/$persona[0]">Ver</a></td>
+                        <td><a href="/editar/$persona[0]">Editar</a></td>
+                        <td><a href="/borrar/$persona[0]" onclick="return confirm('¿Seguro que deseas borrar este registro?');">Borrar</a></td>
                     </tr>
             </tbody>
         </table>
