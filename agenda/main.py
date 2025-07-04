@@ -78,7 +78,7 @@ class Insertar:
             # Imprime un mensaje de error genérico.
             print(f"Error 001: {error.args[0]}")
             # A pesar del error, intenta renderizar la plantilla.
-            return render.insertar()
+            return render.insertar({})
 
     # Este método se ejecuta cuando se recibe una solicitud HTTP POST a la ruta "/insertar"
     # (es decir, cuando se envía el formulario de inserción).
