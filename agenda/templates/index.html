@@ -7,6 +7,9 @@ $def with(respuesta={})
     <body>
         <h1>SQLITE3 Personas</h1>
 
+        $if respuesta.get("mensaje"):
+            <div style="color: green; font-weight: bold;">$respuesta["mensaje"]</div>
+
         $if respuesta["error"] is not None:
             <h2>$respuesta["error"]</h2>
 

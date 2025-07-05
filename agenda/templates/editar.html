@@ -2,20 +2,22 @@ $def with (respuesta={})
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>SQLITE demo</title>
+        <title>Editar Persona</title>
     </head>
     <body>
-        <h1>Detalle Personas</h1>
+        <h1>Editar Persona</h1>
         $if respuesta["error"] is not None:
             <h2>$respuesta["error"]</h2>
         $elif respuesta.get("persona") is not None:
-            <form>
+            <form method="post">
                 $ nombre = '%s' % respuesta['persona'][1]
                 $ email = '%s' % respuesta['persona'][2]
                 <label>Nombre</label><br>
-                <input type="text" name="nombre" value=$nombre readonly><br>
+                <input type="text" name="nombre" value=$nombre required><br>
                 <label>Email</label><br>
-                <input type="text" name="email" value=$email readonly><br>
+                <input type="email" name="email" value=$email required><br>
+                <input type="submit" value="Guardar cambios">
+                <a href="/">Cancelar</a>
             </form>
         $else:
             <h2>No se encontró la persona solicitada.</h2>

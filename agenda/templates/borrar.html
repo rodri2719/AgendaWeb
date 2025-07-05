@@ -1,0 +1,20 @@
+$def with (respuesta={})
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Borrar Persona</title>
+    </head>
+    <body>
+        <h1>Borrar Persona</h1>
+        $if respuesta["error"] is not None:
+            <h2>$respuesta["error"]</h2>
+        $elif respuesta.get("persona") is not None:
+            <form method="post">
+                <p>¿Estás seguro que deseas borrar a <strong>$respuesta['persona'][1]</strong>?</p>
+                <input type="submit" value="Borrar">
+                <a href="/">Cancelar</a>
+            </form>
+        $else:
+            <h2>No se encontró la persona solicitada.</h2>
+    </body>
+</html>
